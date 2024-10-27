@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Antigüedad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Antigüedad</h1>
+        
+        <div class="form-container">
+            <div class="form-group">
+                <label>Terminación Clave:</label>
+                <input type="text" id="terminacionClave" maxlength="6" pattern="\d{6}" placeholder="Últimos 6 dígitos" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Fecha de Ingreso:</label>
+                <input type="date" id="fechaIngreso" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Fecha de Egreso:</label>
+                <input type="date" id="fechaEgreso" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Tipo:</label>
+                <select id="tipo" required>
+                    <option value="1">1. Activo</option>
+                    <option value="2">2. Licencia</option>
+                </select>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn" onclick="agregarRegistro()">Agregar</button>
+                <button class="btn" onclick="calcularTiempo()">Calcular</button>
+                <button class="btn" onclick="eliminarTodo()">Eliminar Todo</button>
+            </div>
+        </div>
+        
+        <div class="table-container">
+            <table id="registrosTabla">
+                <thead>
+                    <tr>
+                        <th>Terminación Clave</th>
+                        <th>Fecha de Ingreso</th>
+                        <th>Fecha de Egreso</th>
+                        <th>Tipo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="results">
+            <h3>Resultados:</h3>
+            <p id="tiempoActivo">Tiempo Activo: 0 años, 0 meses, 0 días</p>
+            <p id="tiempoLicencia">Tiempo en Licencia: 0 años, 0 meses, 0 días</p>
+        </div>
+        
+        <div class="signature">
+            SSRN BPE/GACG
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
